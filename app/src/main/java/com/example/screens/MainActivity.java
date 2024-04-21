@@ -28,9 +28,14 @@ public class MainActivity extends AppCompatActivity {
 
                 if (input == null) {
                     errorText.setText("Please enter text to reverse");
-                }
-                    Intent intent = new Intent(MainActivity.this, MainActivity2.class); // change this line and you will good to go
+                }else {
+
+                    String inputText = String.valueOf(input.getText());
+                    Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                    intent.putExtra("input", inputText);
                     startActivity(intent);
+                }
+
 
 
             }
