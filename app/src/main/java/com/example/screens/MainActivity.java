@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class MainActivity extends AppCompatActivity {
 
 
@@ -25,21 +23,15 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                if (input == null) {
-                    errorText.setText("Please enter text to reverse");
+                if (input == null) { //Prevent the user from starting the activity if EditText is empty
+                    errorText.setText("Please enter text to reverse"); //Tells the user to enter text before moving on
                 }else {
-
-                    String inputText = String.valueOf(input.getText());
-                    Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                    intent.putExtra("input", inputText);
+                    String inputText = String.valueOf(input.getText()); //Get text inside the EditText
+                    Intent intent = new Intent(MainActivity.this, MainActivity2.class); //Intent wit the two activities
+                    intent.putExtra("input", inputText); //add the input to the bundle
                     startActivity(intent);
                 }
-
-
-
             }
         });
-
     }
 }

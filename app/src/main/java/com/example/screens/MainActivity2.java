@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.content.Intent;
 import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
@@ -22,8 +21,8 @@ public class MainActivity2 extends AppCompatActivity {
         }
 
         final TextView reversedTextView = findViewById(R.id.reversedText);
-        StringBuilder reversedText = new StringBuilder(inputText).reverse();
+        StringBuilder reversedText = new StringBuilder(inputText).reverse(); //Reverse the input
 
-        reversedTextView.setText(reversedText);
+        reversedTextView.setText(reversedText); //Add the reversed input to the TextView
     }
 }
