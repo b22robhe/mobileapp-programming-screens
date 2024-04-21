@@ -4,6 +4,7 @@ package com.example.screens;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (input == null) { //Prevent the user from starting the activity if EditText is empty
+                if (TextUtils.isEmpty(input.getText())){ //Prevent the user from starting the activity if EditText is empty
                     errorText.setText("Please enter text to reverse"); //Tells the user to enter text before moving on
                 }else {
                     String inputText = String.valueOf(input.getText()); //Get text inside the EditText

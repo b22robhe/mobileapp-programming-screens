@@ -13,16 +13,14 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        String inputText = null; //Bring variable into scope
+        String inputText; //Bring variable into scope
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             inputText = extras.getString("input"); //Get the input from bundle
+            final TextView reversedTextView = findViewById(R.id.reversedText);
+            StringBuilder reversedText = new StringBuilder(inputText).reverse(); //Reverse the input
+            reversedTextView.setText(reversedText); //Add the reversed input to the TextView
         }
-
-        final TextView reversedTextView = findViewById(R.id.reversedText);
-        StringBuilder reversedText = new StringBuilder(inputText).reverse(); //Reverse the input
-
-        reversedTextView.setText(reversedText); //Add the reversed input to the TextView
     }
 }
